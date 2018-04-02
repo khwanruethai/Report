@@ -1,0 +1,613 @@
+﻿@{
+    Layout = "_Layout";
+}
+@using System.Globalization
+<section class="content-header">
+    <h1>
+        @{
+            CultureInfo en = new CultureInfo("EN");
+        }
+        รายงานฝ่ายโฆษณา :   @DateTime.Now.ToString("dd MMMM yyyy", en) <br />
+        <small>Summary</small>
+    </h1>
+    <ol class="breadcrumb">
+        <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
+        <li class="active">Advertising</li>
+    </ol>
+</section>
+<section class="content">
+    <div class="row">
+        <div class="col-lg-3 col-xs-6">
+            <!-- small box -->
+            <div class="small-box bg-aqua">
+                <div class="inner">
+                    <h4>รายงานวันนี้</h4>
+                    <p>คลิกเพื่อดูรายงาน</p>
+                </div>
+                <div class="icon">
+                    <i class="fa fa-file"></i>
+                </div>
+                <a href="@Url.Action("Index","ReportAds")" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+            </div>
+        </div>
+        <!-- ./col -->
+        <div class="col-lg-3 col-xs-6">
+            <!-- small box -->
+            <div class="small-box bg-green">
+                <div class="inner">
+                    <h4>รายงานย้อนหลัง</h4>
+                    <p>คลิกเพื่อดูรายงาน</p>
+                </div>
+                <div class="icon">
+                    <i class="fa fa-search"></i>
+                </div>
+                <a href="@Url.Action("search","Ads")" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+            </div>
+        </div>
+        <!-- ./col -->
+        <div class="col-lg-3 col-xs-6">
+            <!-- small box -->
+            <div class="small-box bg-yellow">
+                <div class="inner">
+                    <h4>10,000,000.00</h4>
+                    <p>รายได้รวมทั้งหมด</p>
+                </div>
+                <div class="icon">
+                    <i class="fa fa-money"></i>
+                </div>
+                <a href="#" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+            </div>
+        </div>
+        <!-- ./col -->
+        <div class="col-lg-3 col-xs-6">
+            <!-- small box -->
+            <div class="small-box bg-red">
+                <div class="inner">
+                    <h4>100,000,000.00</h4>
+
+                    <p>Target รวมทั้งหมด</p>
+                </div>
+                <div class="icon">
+                    <i class="fa fa-line-chart"></i>
+                </div>
+                <a href="#" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+            </div>
+        </div>
+        <!-- ./col -->
+    </div>
+
+    <div class="row">
+        <div class="col-xs-12">
+            <!-- interactive chart -->
+            <div class="box box-primary">
+                <div class="box-header with-border">
+                    <i class="fa fa-bar-chart-o"></i>
+                    <h3 class="box-title">รายได้</h3>
+                    <div class="box-tools pull-right">
+                        Real time
+                        <div class="btn-group" id="realtime" data-toggle="btn-toggle">
+                            <button type="button" class="btn btn-default btn-xs active" data-toggle="on">On</button>
+                            <button type="button" class="btn btn-default btn-xs" data-toggle="off">Off</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="box-body">
+                    <div id="chartContainer2" style="height: 300px; width: 100%;">
+                        </div>
+                    </div>
+                <!-- /.box-body-->
+            </div>
+            <!-- /.box -->
+
+        </div>
+        <!-- /.col -->
+    </div>
+    <!-- /.row -->
+    <div class="row">
+        <div class="col-md-6">
+            <!---->
+            <div class="box box-primary">
+                <div class="box-header with-border">
+                    <i class="fa fa-bar-chart-o"></i>
+                    <h3 class="box-title">ยอดขายโฆษาของทุกกลุ่ม</h3>
+                    <div class="box-tools pull-right">
+                        <button type="button" class="btn btn-box-tool" data-widget="collapse">
+                            <i class="fa fa-minus"></i>
+                        </button>
+                        <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
+                    </div>
+                </div>
+                <div class="box-body">
+                    <div id="chartContainerCol" style="height: 300px; width: 100%;">
+                    </div>
+                </div>
+                <!-- /.box-body-->
+            </div>
+            <!-- Line chart -->
+            <div class="box box-primary">
+                <div class="box-header with-border">
+                    <i class="fa fa-bar-chart-o"></i>
+                    <h3 class="box-title">รายได้เดือนกุมภาพันธ์ - มีนาคม 2561</h3>
+                    <div class="box-tools pull-right">
+                        <button type="button" class="btn btn-box-tool" data-widget="collapse">
+                            <i class="fa fa-minus"></i>
+                        </button>
+                        <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
+                    </div>
+                </div>
+                <div class="box-body">
+                    <div id="line-chart" style="height: 300px;"></div>
+                </div>
+                <!-- /.box-body-->
+            </div>
+            <!-- /.box -->
+            <!-- Area chart -->
+          
+         
+            <!-- /.box -->
+        </div>
+        <!-- /.col -->
+        <div class="col-md-6">
+            <!-- Bar chart -->
+            <div class="box box-danger">
+                <div class="box-header with-border">
+                    <h3 class="box-title">ยอดขายโฆษณา แยกตามประเภท</h3>
+
+                    <div class="box-tools pull-right">
+                        <button type="button" class="btn btn-box-tool" data-widget="collapse">
+                            <i class="fa fa-minus"></i>
+                        </button>
+                        <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
+                    </div>
+                </div>
+                <div class="box-body">
+                    <div id="chartContainer" style="height: 300px; width: 100%;"></div>
+                </div>
+                <!-- /.box-body -->
+            </div>
+            <!-- /.box -->
+            <!-- Donut chart -->
+            <div class="box box-success">
+                <div class="box-header with-border">
+                    <h3 class="box-title">อัตราการเรียกเก็บเงิน - การเก็บเงินได้</h3>
+
+                    <div class="box-tools pull-right">
+                        <button type="button" class="btn btn-box-tool" data-widget="collapse">
+                            <i class="fa fa-minus"></i>
+                        </button>
+                        <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
+                    </div>
+                </div>
+                <div class="box-body chart-responsive">
+                    <div class="chart" id="bar-chart" style="height: 300px; -webkit-tap-highlight-color: rgba(0, 0, 0, 0);">
+                        <svg height="300" version="1.1" width="786.5" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" style="overflow: hidden; position: relative; left: -0.5px;"><desc style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);">Created with Raphaël 2.2.0</desc><defs style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></defs><text x="32.59375" y="261" text-anchor="end" font-family="sans-serif" font-size="12px" stroke="none" fill="#888888" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); text-anchor: end; font-family: sans-serif; font-size: 12px; font-weight: normal;" font-weight="normal"><tspan dy="4" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);">0</tspan></text><path fill="none" stroke="#aaaaaa" d="M45.09375,261H761.5" stroke-width="0.5" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></path><text x="32.59375" y="202" text-anchor="end" font-family="sans-serif" font-size="12px" stroke="none" fill="#888888" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); text-anchor: end; font-family: sans-serif; font-size: 12px; font-weight: normal;" font-weight="normal"><tspan dy="4" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);">25</tspan></text><path fill="none" stroke="#aaaaaa" d="M45.09375,202H761.5" stroke-width="0.5" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></path><text x="32.59375" y="143" text-anchor="end" font-family="sans-serif" font-size="12px" stroke="none" fill="#888888" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); text-anchor: end; font-family: sans-serif; font-size: 12px; font-weight: normal;" font-weight="normal"><tspan dy="4" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);">50</tspan></text><path fill="none" stroke="#aaaaaa" d="M45.09375,143H761.5" stroke-width="0.5" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></path><text x="32.59375" y="84" text-anchor="end" font-family="sans-serif" font-size="12px" stroke="none" fill="#888888" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); text-anchor: end; font-family: sans-serif; font-size: 12px; font-weight: normal;" font-weight="normal"><tspan dy="4" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);">75</tspan></text><path fill="none" stroke="#aaaaaa" d="M45.09375,84H761.5" stroke-width="0.5" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></path><text x="32.59375" y="25" text-anchor="end" font-family="sans-serif" font-size="12px" stroke="none" fill="#888888" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); text-anchor: end; font-family: sans-serif; font-size: 12px; font-weight: normal;" font-weight="normal"><tspan dy="4" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);">100</tspan></text><path fill="none" stroke="#aaaaaa" d="M45.09375,25H761.5" stroke-width="0.5" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></path><text x="710.328125" y="273.5" text-anchor="middle" font-family="sans-serif" font-size="12px" stroke="none" fill="#888888" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); text-anchor: middle; font-family: sans-serif; font-size: 12px; font-weight: normal;" font-weight="normal" transform="matrix(1,0,0,1,0,7)"><tspan dy="4" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);">2012</tspan></text><text x="607.984375" y="273.5" text-anchor="middle" font-family="sans-serif" font-size="12px" stroke="none" fill="#888888" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); text-anchor: middle; font-family: sans-serif; font-size: 12px; font-weight: normal;" font-weight="normal" transform="matrix(1,0,0,1,0,7)"><tspan dy="4" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);">2011</tspan></text><text x="505.640625" y="273.5" text-anchor="middle" font-family="sans-serif" font-size="12px" stroke="none" fill="#888888" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); text-anchor: middle; font-family: sans-serif; font-size: 12px; font-weight: normal;" font-weight="normal" transform="matrix(1,0,0,1,0,7)"><tspan dy="4" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);">2010</tspan></text><text x="403.296875" y="273.5" text-anchor="middle" font-family="sans-serif" font-size="12px" stroke="none" fill="#888888" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); text-anchor: middle; font-family: sans-serif; font-size: 12px; font-weight: normal;" font-weight="normal" transform="matrix(1,0,0,1,0,7)"><tspan dy="4" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);">2009</tspan></text><text x="300.953125" y="273.5" text-anchor="middle" font-family="sans-serif" font-size="12px" stroke="none" fill="#888888" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); text-anchor: middle; font-family: sans-serif; font-size: 12px; font-weight: normal;" font-weight="normal" transform="matrix(1,0,0,1,0,7)"><tspan dy="4" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);">2008</tspan></text><text x="198.609375" y="273.5" text-anchor="middle" font-family="sans-serif" font-size="12px" stroke="none" fill="#888888" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); text-anchor: middle; font-family: sans-serif; font-size: 12px; font-weight: normal;" font-weight="normal" transform="matrix(1,0,0,1,0,7)"><tspan dy="4" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);">2007</tspan></text><text x="96.265625" y="273.5" text-anchor="middle" font-family="sans-serif" font-size="12px" stroke="none" fill="#888888" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); text-anchor: middle; font-family: sans-serif; font-size: 12px; font-weight: normal;" font-weight="normal" transform="matrix(1,0,0,1,0,7)"><tspan dy="4" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);">2006</tspan></text><rect x="57.88671875" y="25" width="36.87890625" height="236" rx="0" ry="0" fill="#00a65a" stroke="none" fill-opacity="1" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); fill-opacity: 1;"></rect><rect x="97.765625" y="48.60000000000002" width="36.87890625" height="212.39999999999998" rx="0" ry="0" fill="#f56954" stroke="none" fill-opacity="1" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); fill-opacity: 1;"></rect><rect x="160.23046875" y="84" width="36.87890625" height="177" rx="0" ry="0" fill="#00a65a" stroke="none" fill-opacity="1" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); fill-opacity: 1;"></rect><rect x="200.109375" y="107.6" width="36.87890625" height="153.4" rx="0" ry="0" fill="#f56954" stroke="none" fill-opacity="1" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); fill-opacity: 1;"></rect><rect x="262.57421875" y="143" width="36.87890625" height="118" rx="0" ry="0" fill="#00a65a" stroke="none" fill-opacity="1" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); fill-opacity: 1;"></rect><rect x="302.453125" y="166.60000000000002" width="36.87890625" height="94.39999999999998" rx="0" ry="0" fill="#f56954" stroke="none" fill-opacity="1" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); fill-opacity: 1;"></rect><rect x="364.91796875" y="84" width="36.87890625" height="177" rx="0" ry="0" fill="#00a65a" stroke="none" fill-opacity="1" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); fill-opacity: 1;"></rect><rect x="404.796875" y="107.6" width="36.87890625" height="153.4" rx="0" ry="0" fill="#f56954" stroke="none" fill-opacity="1" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); fill-opacity: 1;"></rect><rect x="467.26171875" y="143" width="36.87890625" height="118" rx="0" ry="0" fill="#00a65a" stroke="none" fill-opacity="1" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); fill-opacity: 1;"></rect><rect x="507.140625" y="166.60000000000002" width="36.87890625" height="94.39999999999998" rx="0" ry="0" fill="#f56954" stroke="none" fill-opacity="1" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); fill-opacity: 1;"></rect><rect x="569.60546875" y="84" width="36.87890625" height="177" rx="0" ry="0" fill="#00a65a" stroke="none" fill-opacity="1" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); fill-opacity: 1;"></rect><rect x="609.484375" y="107.6" width="36.87890625" height="153.4" rx="0" ry="0" fill="#f56954" stroke="none" fill-opacity="1" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); fill-opacity: 1;"></rect><rect x="671.94921875" y="25" width="36.87890625" height="236" rx="0" ry="0" fill="#00a65a" stroke="none" fill-opacity="1" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); fill-opacity: 1;"></rect><rect x="711.828125" y="48.60000000000002" width="36.87890625" height="212.39999999999998" rx="0" ry="0" fill="#f56954" stroke="none" fill-opacity="1" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); fill-opacity: 1;"></rect></svg><div class="morris-hover morris-default-style" style="left: 269.227px; top: 112px; display: none;">
+                            <div class="morris-hover-row-label">2008</div><div class="morris-hover-point" style="color: #00a65a">
+                                CPU:
+                                50
+                            </div><div class="morris-hover-point" style="color: #f56954">
+                                DISK:
+                                40
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- /.box-body -->
+            </div>
+            <!-- /.box -->
+        </div>
+        <div class="col-md-12">
+            <div class="box box-primary">
+                <div class="box-header with-border">
+                    <i class="fa fa-bar-chart-o"></i>
+
+                    <h3 class="box-title">รายได้เดือน มกราคม - มิถุนายน</h3>
+
+                    <div class="box-tools pull-right">
+                        <button type="button" class="btn btn-box-tool" data-widget="collapse">
+                            <i class="fa fa-minus"></i>
+                        </button>
+                        <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
+                    </div>
+                </div>
+                <div class="box-body">
+                    <div id="chartContainera1" style="height: 300px; width: 100%;">
+                    </div>
+                </div>
+                <!-- /.box-body-->
+            </div>
+        </div>
+        <!-- /.col -->
+    </div>
+    <!-- /.row -->
+</section>
+<!-- /.content -->
+<script src="~/lib/jquery/dist/jquery-3.2.1.min.js"></script>
+
+<!-- Page script -->
+<script>
+  $(function () {
+    /*
+     * Flot Interactive Chart
+     * -----------------------
+     */
+    // We use an inline data source in the example, usually data would
+    // be fetched from a server
+    var data = [], totalPoints = 100
+
+    function getRandomData() {
+
+      if (data.length > 0)
+        data = data.slice(1)
+
+      // Do a random walk
+      while (data.length < totalPoints) {
+
+        var prev = data.length > 0 ? data[data.length - 1] : 50,
+            y    = prev + Math.random() * 10 - 5
+
+        if (y < 0) {
+          y = 0
+        } else if (y > 100) {
+          y = 100
+        }
+
+        data.push(y)
+      }
+
+      // Zip the generated y values with the x values
+      var res = []
+      for (var i = 0; i < data.length; ++i) {
+        res.push([i, data[i]])
+      }
+
+      return res
+    }
+
+    var interactive_plot = $.plot('#interactive', [getRandomData()], {
+      grid  : {
+        borderColor: '#f3f3f3',
+        borderWidth: 1,
+        tickColor  : '#f3f3f3'
+      },
+      series: {
+        shadowSize: 0, // Drawing is faster without shadows
+        color     : '#3c8dbc'
+      },
+      lines : {
+        fill : true, //Converts the line chart to area chart
+        color: '#3c8dbc'
+      },
+      yaxis : {
+        min : 0,
+        max : 100,
+        show: true
+      },
+      xaxis : {
+        show: true
+      }
+    })
+
+    var updateInterval = 500 //Fetch data ever x milliseconds
+    var realtime       = 'on' //If == to on then fetch data every x seconds. else stop fetching
+    function update() {
+
+      interactive_plot.setData([getRandomData()])
+
+      // Since the axes don't change, we don't need to call plot.setupGrid()
+      interactive_plot.draw()
+      if (realtime === 'on')
+        setTimeout(update, updateInterval)
+    }
+
+    //INITIALIZE REALTIME DATA FETCHING
+    if (realtime === 'on') {
+      update()
+    }
+    //REALTIME TOGGLE
+    $('#realtime .btn').click(function () {
+      if ($(this).data('toggle') === 'on') {
+        realtime = 'on'
+      }
+      else {
+        realtime = 'off'
+      }
+      update()
+    })
+    /*
+     * END INTERACTIVE CHART
+     */
+
+    /*
+     * LINE CHART
+     * ----------
+     */
+    //LINE randomly generated data
+
+    var sin = [], cos = []
+    for (var i = 0; i < 14; i += 0.5) {
+      sin.push([i, Math.sin(i)])
+      cos.push([i, Math.cos(i)])
+    }
+    var line_data1 = {
+      data : sin,
+      color: '#3c8dbc'
+    }
+    var line_data2 = {
+      data : cos,
+      color: '#00c0ef'
+    }
+    $.plot('#line-chart', [line_data1, line_data2], {
+      grid  : {
+        hoverable  : true,
+        borderColor: '#f3f3f3',
+        borderWidth: 1,
+        tickColor  : '#f3f3f3'
+      },
+      series: {
+        shadowSize: 0,
+        lines     : {
+          show: true
+        },
+        points    : {
+          show: true
+        }
+      },
+      lines : {
+        fill : false,
+        color: ['#3c8dbc', '#f56954']
+      },
+      yaxis : {
+        show: true
+      },
+      xaxis : {
+        show: true
+      }
+    })
+    //Initialize tooltip on hover
+    $('<div class="tooltip-inner" id="line-chart-tooltip"></div>').css({
+      position: 'absolute',
+      display : 'none',
+      opacity : 0.8
+    }).appendTo('body')
+    $('#line-chart').bind('plothover', function (event, pos, item) {
+
+      if (item) {
+        var x = item.datapoint[0].toFixed(2),
+            y = item.datapoint[1].toFixed(2)
+
+        $('#line-chart-tooltip').html(item.series.label + ' of ' + x + ' = ' + y)
+          .css({ top: item.pageY + 5, left: item.pageX + 5 })
+          .fadeIn(200)
+      } else {
+        $('#line-chart-tooltip').hide()
+      }
+
+    })
+    /* END LINE CHART */
+
+    /*
+     * FULL WIDTH STATIC AREA CHART
+     * -----------------
+     */
+    var areaData = [[2, 88.0], [3, 93.3], [4, 102.0], [5, 108.5], [6, 115.7], [7, 115.6],
+      [8, 124.6], [9, 130.3], [10, 134.3], [11, 141.4], [12, 146.5], [13, 151.7], [14, 159.9],
+      [15, 165.4], [16, 167.8], [17, 168.7], [18, 169.5], [19, 168.0]]
+    $.plot('#area-chart', [areaData], {
+      grid  : {
+        borderWidth: 0
+      },
+      series: {
+        shadowSize: 0, // Drawing is faster without shadows
+        color     : '#00c0ef'
+      },
+      lines : {
+        fill: true //Converts the line chart to area chart
+      },
+      yaxis : {
+        show: false
+      },
+      xaxis : {
+        show: false
+      }
+    })
+
+    /* END AREA CHART */
+
+    /*
+     * BAR CHART
+     * ---------
+     */
+
+    var bar_data = {
+      data : [['January', 10], ['February', 8], ['March', 4], ['April', 13], ['May', 17], ['June', 9]],
+      color: '#3c8dbc'
+    }
+    $.plot('#bar-chart', [bar_data], {
+      grid  : {
+        borderWidth: 1,
+        borderColor: '#f3f3f3',
+        tickColor  : '#f3f3f3'
+      },
+      series: {
+        bars: {
+          show    : true,
+          barWidth: 0.5,
+          align   : 'center'
+        }
+      },
+      xaxis : {
+        mode      : 'categories',
+        tickLength: 0
+      }
+    })
+    /* END BAR CHART */
+
+    /*
+     * DONUT CHART
+     * -----------
+     */
+
+    var donutData = [
+      { label: 'Series2', data: 30, color: '#3c8dbc' },
+      { label: 'Series3', data: 20, color: '#0073b7' },
+      { label: 'Series4', data: 50, color: '#00c0ef' }
+    ]
+    $.plot('#donut-chart', donutData, {
+      series: {
+        pie: {
+          show       : true,
+          radius     : 1,
+          innerRadius: 0.5,
+          label      : {
+            show     : true,
+            radius   : 2 / 3,
+            formatter: labelFormatter,
+            threshold: 0.1
+          }
+
+        }
+      },
+      legend: {
+        show: false
+      }
+    })
+    /*
+     * END DONUT CHART
+     */
+
+  })
+
+  /*
+   * Custom Label formatter
+   * ----------------------
+   */
+  function labelFormatter(label, series) {
+    return '<div style="font-size:13px; text-align:center; padding:2px; color: #fff; font-weight: 600;">'
+      + label
+      + '<br>'
+      + Math.round(series.percent) + '%</div>'
+  }
+</script>
+<script type="text/javascript" src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+<script type="text/javascript">
+window.onload = function () {
+	var chart = new CanvasJS.Chart("chartContainer",
+	{
+		theme: "theme2",
+		title:{
+			//text: "Gaming Consoles Sold in 2012"
+		},
+		data: [
+		{
+			type: "pie",
+			showInLegend: true,
+			toolTipContent: "{y} - #percent %",
+			yValueFormatString: "#,##0,,.## Million",
+			legendText: "{indexLabel}",
+			dataPoints: [
+				{  y: 4181563, indexLabel: "มติชนรายวัน" },
+				{  y: 2175498, indexLabel: "ข่าวสด" },
+				{  y: 3125844, indexLabel: "ประชาชาติธุรกิจ" },
+				{  y: 1176121, indexLabel: "มติชนสุดสัปดาห์"},
+				{  y: 1727161, indexLabel: "เทคโนโลยี" },
+				{  y: 4303364, indexLabel: "เส้นทางเศรษฐี"},
+				{  y: 1717786, indexLabel: "ศิลปวัฒนธรรม"}
+			]
+		}
+		]
+	});
+	chart.render();
+
+     var chart = new CanvasJS.Chart("chartContainer2",
+    {
+
+      title:{
+    //  text: "Books Issued from Central Library"
+      },
+       data: [
+      {
+        type: "spline",
+
+        dataPoints: [
+        { x: new Date(2012, 00, 1), y: 1352 },
+        { x: new Date(2012, 01, 1), y: 1514 },
+        { x: new Date(2012, 02, 1), y: 1321 },
+        { x: new Date(2012, 03, 1), y: 1163 },
+        { x: new Date(2012, 04, 1), y: 950 },
+        { x: new Date(2012, 05, 1), y: 1201 },
+        { x: new Date(2012, 06, 1), y: 1186 },
+        { x: new Date(2012, 07, 1), y: 1281 },
+        { x: new Date(2012, 08, 1), y: 1438 },
+        { x: new Date(2012, 09, 1), y: 1305 },
+        { x: new Date(2012, 10, 1), y: 1480 },
+        { x: new Date(2012, 11, 1), y: 1291 }
+        ]
+      }
+
+      ]
+    });
+
+    chart.render();
+}
+
+
+    //
+
+var chart = new CanvasJS.Chart("chartContainerCol",
+{
+    title: {
+      //  text: "Top Oil Reserves"
+    },
+    data: [
+
+    {
+        dataPoints: [
+        { x: 1, y: 297571, label: "Print" },
+        { x: 2, y: 267017, label: "New Media" },
+        { x: 3, y: 175200, label: "สัมนา" },
+        { x: 4, y: 154580, label: "กิจกรรม" },
+        { x: 5, y: 116000, label: "อีเว้นท์/โครงการ" },
+        { x: 6, y: 97800, label: "อื่นๆ" }
+        ]
+    }
+    ]
+});
+
+chart.render();
+
+    //
+
+var chart = new CanvasJS.Chart("chartContainera1",
+{
+    title: {
+        //text: "Top Oil Reserves"
+    },
+    axisY: {
+        title: "Reserves(MMbbl)"
+    },
+    legend: {
+        verticalAlign: "bottom",
+        horizontalAlign: "center"
+    },
+    data: [
+
+    {
+        color: "#B0D0B0",
+        type: "column",
+        showInLegend: true,
+        legendMarkerType: "none",
+        legendText: "MMbbl = one million barrels",
+        dataPoints: [
+        { x: 1, y: 297571, label: "มกราคม" },
+        { x: 2, y: 267017, label: "กุมภาพันธ์" },
+        { x: 3, y: 175200, label: "มีนาคม" },
+        { x: 4, y: 154580, label: "เมษายน" },
+        { x: 5, y: 116000, label: "พฤษภาคม" },
+        { x: 6, y: 97800, label: "มิถุนายน" }
+        ]
+    }
+    ]
+});
+
+chart.render();
+</script>

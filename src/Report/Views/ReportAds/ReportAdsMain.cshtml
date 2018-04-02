@@ -1,0 +1,115 @@
+﻿<!DOCTYPE html>
+@using Report.Models
+@using System.Globalization
+@{ 
+
+    CultureInfo th = new CultureInfo("th-TH");
+}
+<html>
+<head>
+    <link rel="stylesheet" href="~/lib/bower_components/bootstrap/dist/css/bootstrap.min.css">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="~/lib/bower_components/font-awesome/css/font-awesome.min.css">
+    <!-- Ionicons -->
+    <link rel="stylesheet" href="~/lib/bower_components/Ionicons/css/ionicons.min.css">
+    <!-- Theme style -->
+    <link rel="stylesheet" href="~/lib/dist/css/AdminLTE.min.css">
+    <!-- AdminLTE Skins. Choose a skin from the css/skins
+     folder instead of downloading all of them to reduce the load. -->
+    <link rel="stylesheet" href="~/lib/dist/css/skins/_all-skins.min.css">
+    <!-- Morris chart -->
+    <link rel="stylesheet" href="~/lib/bower_components/morris.js/morris.css">
+    <!-- jvectormap -->
+    <link rel="stylesheet" href="~/lib/bower_components/jvectormap/jquery-jvectormap.css">
+    <!-- bootstrap wysihtml5 - text editor -->
+    <link rel="stylesheet" href="~/lib/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css">
+    <!-- DataTables -->
+    <link rel="stylesheet" href="~/lib/bower_components/datatables.net-bs/css/dataTables.bootstrap.min.css">
+    <link rel="stylesheet" href="~/lib/bower_components/select2/dist/css/select2.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
+</head>
+<body>
+    <div class="form-group">
+        <div class="form-row">
+            <div class="col-md-12 text-center">
+                <b> <h5>ยอดขายโฆษณาของหนังสือประจำเดือน @DateTime.Now.ToString("MMMM  yyyy", th)  ณ วันที่  @Convert.ToDateTime(ViewData["date_now"]).ToString("dd/MM/yyyy", th) เวลา @DateTime.Now.ToString("HH:mm")</h5></b>
+            </div>
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="row">
+            <div class="col-md-12">
+                <table class="table table-bordered table-responsive">
+
+                    <thead>
+                        <tr>
+                            <th class="text-center">ชื่อทีม</th>
+                            @foreach (var item in ViewData["main"] as List<ads_type_main_tabModel>)
+                            {
+                                <th>@item.type_ads_name</th>
+                            }
+                            <th  class="text-center">Target ทั้งสิ้น</th>
+                            <th  class="text-center">ยอดขายทั้งสิ้น</th>
+                            <th  class="text-center">ขาด(-) / เกิน</th>
+                            <th  class="text-center">เพิ่ม / ลด(-) <br /> เปรียบเทียบ ณ วันที่ @Convert.ToDateTime(ViewData["date_old"]).ToString("dd/MM/yyyy", th)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in ViewData["main_det"] as List<ads_sales_type_main_h1_viewModel>)
+                        {
+                           <tr>
+                               <td>@Html.Raw(item.team_name)</td>
+                               <td class="text-right">@item.ads01</td>
+                               <td class="text-right">@item.ads02</td>
+                               <td class="text-right">@item.ads03</td>
+                               <td class="text-right">@item.ads04</td>
+                               <td class="text-right">@item.ads05</td>
+                               <td class="text-right">0.00</td>
+                               <td class="text-right">@item.sales_amount</td>
+                               <td class="text-right">0.00</td>
+                               <td class="text-right">@item.dif</td>
+                           </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="~/lib/bower_components/jquery/dist/jquery.min.js"></script>
+<!-- jQuery UI 1.11.4 -->
+<script src="~/lib/bower_components/jquery-ui/jquery-ui.min.js"></script>
+<!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
+<!-- Bootstrap 3.3.7 -->
+<script src="~/lib/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+<!-- Morris.js charts -->
+<script src="~/lib/bower_components/raphael/raphael.min.js"></script>
+<script src="~/lib/bower_components/morris.js/morris.min.js"></script>
+<!-- Sparkline -->
+<script src="~/lib/bower_components/jquery-sparkline/dist/jquery.sparkline.min.js"></script>
+<!-- jvectormap -->
+<script src="~/lib/plugins/jvectormap/jquery-jvectormap-1.2.2.min.js"></script>
+<script src="~/lib/plugins/jvectormap/jquery-jvectormap-world-mill-en.js"></script>
+<!-- jQuery Knob Chart -->
+<script src="~/lib/bower_components/jquery-knob/dist/jquery.knob.min.js"></script>
+<!-- daterangepicker -->
+<script src="~/lib/bower_components/moment/min/moment.min.js"></script>
+
+<!-- Slimscroll -->
+<script src="~/lib/bower_components/jquery-slimscroll/jquery.slimscroll.min.js"></script>
+<!-- FastClick -->
+<script src="~/lib/bower_components/fastclick/lib/fastclick.js"></script>
+<!-- AdminLTE App -->
+<script src="~/lib/dist/js/adminlte.min.js"></script>
+<!-- AdminLTE dashboard demo (This is only for demo purposes) -->
+<script src="~/lib/dist/js/pages/dashboard.js"></script>
+<!-- AdminLTE for demo purposes -->
+<script src="~/lib/dist/js/demo.js"></script>
+<!-- DataTables -->
+<!-- ChartJS -->
+<script src="~/lib/bower_components/Chart.js/Chart.js"></script>
+<script src="~/lib/bower_components/datatables.net/js/jquery.dataTables.min.js"></script>
+<script src="~/lib/bower_components/datatables.net-bs/js/dataTables.bootstrap.min.js"></script>
+<!-- AdminLTE dashboard demo (This is only for demo purposes) -->
+<script src="~/lib/dist/js/pages/dashboard2.js"></script>
+</html>

@@ -1,0 +1,405 @@
+﻿@{ 
+
+    Layout = "_Layout";
+}
+<section class="content">
+    <div class="row">
+        <div class="col-md-3">
+            
+                <div class="box box-solid">
+                    <div class="box-header with-border text-center">
+                        <h5 class="box-title text-center">ดูรายงานย้อนหลัง</h5><br />
+                        <h5 class="box-title text-center">ปี</h5>
+                    </div>
+                    <div class="box-body">
+                        <!-- the events -->
+                        <div id="external-events">
+                            <div class="col-md-6">
+                                <div class="external-event text-center bg-light-blue ui-draggable ui-draggable-handle" style="position: relative;">2561</div>
+                                <div class="external-event text-center bg-light-blue ui-draggable ui-draggable-handle" style="position: relative;">2560</div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="external-event text-center bg-light-blue ui-draggable ui-draggable-handle" style="position: relative;">2559</div>
+                                <div class="external-event text-center bg-light-blue ui-draggable ui-draggable-handle" style="position: relative;">2558</div>
+                            </div>
+
+
+                        </div>
+                    </div>
+                    <!-- /.box-body -->
+                </div>
+                <div class="box box-solid">
+                    <div class="box-header with-border text-center">
+                        <h5 class="box-title text-center">เดือน</h5>
+                    </div>
+                    <div class="box-body">
+                        <!-- the events -->
+                        <div id="external-events">
+                            <div class="col-md-4">
+                                <div class="external-event text-center bg-light-blue ui-draggable ui-draggable-handle" style="position: relative;">ม.ค.</div>
+                                <div class="external-event text-center bg-light-blue ui-draggable ui-draggable-handle" style="position: relative;">ก.พ.</div>
+                                <div class="external-event text-center bg-light-blue ui-draggable ui-draggable-handle" style="position: relative;">มี.ค.</div>
+                                <div class="external-event text-center bg-light-blue ui-draggable ui-draggable-handle" style="position: relative;">เม.ย.</div>
+
+                            </div>
+                            <div class="col-md-4">
+                                <div class="external-event text-center bg-light-blue ui-draggable ui-draggable-handle" style="position: relative;">พ.ค.</div>
+                                <div class="external-event text-center bg-light-blue ui-draggable ui-draggable-handle" style="position: relative;">มิ.ย.</div>
+                                <div class="external-event text-center bg-light-blue ui-draggable ui-draggable-handle" style="position: relative;">ก.ค.</div>
+                                <div class="external-event text-center bg-light-blue ui-draggable ui-draggable-handle" style="position: relative;">ส.ค.</div>
+                            </div>
+                            <div class="col-md-4">
+
+                                <div class="external-event text-center bg-light-blue ui-draggable ui-draggable-handle" style="position: relative;">ก.ย.</div>
+                                <div class="external-event text-center bg-light-blue ui-draggable ui-draggable-handle" style="position: relative;">ต.ค.</div>
+                                <div class="external-event text-center bg-light-blue ui-draggable ui-draggable-handle" style="position: relative;">พ.ย.</div>
+                                <div class="external-event text-center bg-light-blue ui-draggable ui-draggable-handle" style="position: relative;">ธ.ค.</div>
+                            </div>
+
+
+                        </div>
+                    </div>
+                    <!-- /.box-body -->
+                </div>
+                <!-- /. box -->
+                <div class="box box-solid">
+                    <div class="box-header with-border">
+                        <h5 class="box-title">กลุ่ม</h5>
+                    </div>
+                    <div class="box-body">
+                        <div class="external-events">
+                            <div class="col-md-12">
+                                <div class="external-event text-center bg-light-blue ui-draggable ui-draggable-handle" style="position: relative;">ทั้งหมด</div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="external-event text-center bg-light-blue ui-draggable ui-draggable-handle" style="position: relative;">Print</div>
+                                <div class="external-event text-center bg-light-blue ui-draggable ui-draggable-handle" style="position: relative;">New Media</div>
+                                <div class="external-event text-center bg-light-blue ui-draggable ui-draggable-handle" style="position: relative;">สัมนา</div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="external-event text-center bg-light-blue ui-draggable ui-draggable-handle" style="position: relative;">กิจกรรม</div>
+                                <div class="external-event text-center bg-light-blue ui-draggable ui-draggable-handle" style="position: relative;">อีเว้นท์</div>
+                                <div class="external-event text-center bg-light-blue ui-draggable ui-draggable-handle" style="position: relative;">อื่นๆ</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="box box-default direct-chat direct-chat-default">
+                    <div class="box-header with-border">
+                        <h5 class="box-title">สื่อ</h5>
+                    </div>
+                    <!-- /.box-header -->
+                    <div class="box-body">
+                        <!-- Conversations are loaded here -->
+                        <div class="direct-chat-messages" style="height:130px;">
+                            <!-- Message. Default to the left -->
+                            <div class="form-group">
+                                <label>
+                                    <div class="icheckbox_flat-green" aria-checked="false" aria-disabled="false" style="position: relative;">
+                                        <input type="checkbox" class="flat-red checkAll" style="position: absolute; opacity: 0;" checked="checked">
+                                        <ins class="iCheck-helper" style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins>
+                                    </div>
+                                    แสดงทั้งหมด
+                                </label>
+                            </div>
+                            <div class="form-group">
+                                <label>
+                                    <div class="icheckbox_flat-green" aria-checked="false" aria-disabled="false" style="position: relative;">
+                                        <input type="checkbox" class="flat-red" style="position: absolute; opacity: 0;" checked="checked">
+                                        <ins class="iCheck-helper" style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins>
+                                    </div>
+                                    มติชนรายวัน
+                                </label>
+                            </div>
+                            <div class="form-group">
+                                <label>
+                                    <div class="icheckbox_flat-green" aria-checked="false" aria-disabled="false" style="position: relative;">
+                                        <input type="checkbox" class="flat-red" style="position: absolute; opacity: 0;" checked="checked">
+                                        <ins class="iCheck-helper" style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins>
+                                    </div>
+                                    ข่าวสด
+                                </label>
+                            </div>
+                            <div class="form-group">
+                                <label>
+                                    <div class="icheckbox_flat-green" aria-checked="false" aria-disabled="false" style="position: relative;">
+                                        <input type="checkbox" class="flat-red" style="position: absolute; opacity: 0;" checked="checked">
+                                        <ins class="iCheck-helper" style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins>
+                                    </div>
+                                    ประชาติธุรกิจ
+                                </label>
+                            </div>
+                            <div class="form-group">
+                                <label>
+                                    <div class="icheckbox_flat-green" aria-checked="false" aria-disabled="false" style="position: relative;">
+                                        <input type="checkbox" class="flat-red" style="position: absolute; opacity: 0;" checked="checked">
+                                        <ins class="iCheck-helper" style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins>
+                                    </div>
+                                    มติชนสุดสัปดาห์
+                                </label>
+                            </div>
+                            <div class="form-group">
+                                <label>
+                                    <div class="icheckbox_flat-green" aria-checked="false" aria-disabled="false" style="position: relative;">
+                                        <input type="checkbox" class="flat-red" style="position: absolute; opacity: 0;" checked="checked">
+                                        <ins class="iCheck-helper" style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins>
+                                    </div>
+                                    เทคโนโลยี
+                                </label>
+                            </div>
+                            <div class="form-group">
+                                <label>
+                                    <div class="icheckbox_flat-green" aria-checked="false" aria-disabled="false" style="position: relative;">
+                                        <input type="checkbox" class="flat-red" style="position: absolute; opacity: 0;" checked="checked">
+                                        <ins class="iCheck-helper" style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins>
+                                    </div>
+                                    เส้นทางเศรษฐี
+                                </label>
+                            </div>
+                            <div class="form-group">
+                                <label>
+                                    <div class="icheckbox_flat-green" aria-checked="false" aria-disabled="false" style="position: relative;">
+                                        <input type="checkbox" class="flat-red" style="position: absolute; opacity: 0;" checked="checked">
+                                        <ins class="iCheck-helper" style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins>
+                                    </div>
+                                    ศิลปวัฒนธรรม
+                                </label>
+                            </div>
+                            <div class="form-group">
+                                <label>
+                                    <div class="icheckbox_flat-green" aria-checked="false" aria-disabled="false" style="position: relative;">
+                                        <input type="checkbox" class="flat-red" style="position: absolute; opacity: 0;" checked="checked">
+                                        <ins class="iCheck-helper" style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins>
+                                    </div>
+                                    ทีวี
+                                </label>
+                            </div>
+                            <div class="form-group">
+                                <label>
+                                    <div class="icheckbox_flat-green" aria-checked="false" aria-disabled="false" style="position: relative;">
+                                        <input type="checkbox" class="flat-red" style="position: absolute; opacity: 0;" checked="checked">
+                                        <ins class="iCheck-helper" style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins>
+                                    </div>
+                                    เว็บไซต์
+                                </label>
+                            </div>
+                            <div class="form-group">
+                                <label>
+                                    <div class="icheckbox_flat-green" aria-checked="false" aria-disabled="false" style="position: relative;">
+                                        <input type="checkbox" class="flat-red" style="position: absolute; opacity: 0;" checked="checked">
+                                        <ins class="iCheck-helper" style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins>
+                                    </div>
+                                    อีเว้นท์
+                                </label>
+                            </div>
+                            <div class="form-group">
+                                <label>
+                                    <div class="icheckbox_flat-green" aria-checked="false" aria-disabled="false" style="position: relative;">
+                                        <input type="checkbox" class="flat-red" style="position: absolute; opacity: 0;" checked="checked">
+                                        <ins class="iCheck-helper" style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins>
+                                    </div>
+                                    กิจกรรม
+                                </label>
+                            </div>
+
+                        </div>
+                        <!--/.direct-chat-messages-->
+                        <!-- /.direct-chat-pane -->
+                    </div>
+                    <!-- /.box-body -->
+                    <div class="box-footer">
+                        <a class="btn btn-primary form-control"><i class="fa fa-search"></i> ค้นหา</a>
+                    </div>
+                    <!-- /.box-footer-->
+                </div>
+            </div>
+        <!-- /.col -->
+        <div class="col-md-9">
+            <div class="box box-primary">
+                <div class="box-body no-padding">
+                    <!-- THE CALENDAR -->
+                    <div class="fc-toolbar fc-header-toolbar">
+                        <div class="fc-right">
+                            <div class="fc-button-group">
+                                <div class="fc-center text-center">
+                                    <h2>
+                                        รายงานสรุปยอดขาย ณ  <span class="mount_report">เดือน กุมภาพันธ์ </span><span class="year_report"> ปี 2561</span>
+                                    </h2>
+                                </div><div class="fc-clear"></div>
+                            </div>
+                        </div>
+                        <!-- /.box-body -->
+                    </div>
+                    <!-- /. box -->
+
+
+                    <div class="col-md-6">
+                        <div class="box box-default">
+                            <div class="box-header with-border">
+                                <i class="fa fa-bar-chart-o"></i>
+                                <h3 class="box-title">ยอดขาย</h3>
+                              
+                            </div>
+                            <div class="box-body">
+                                <div id="chartContainer2" style="height: 300px; width: 100%;">
+                                </div>
+                            </div>
+                            <div class="box-footer text-right">
+                                <a class="btn btn-primary"><i class="fa fa-file"></i> Detail</a>
+                            </div>
+                            <!-- /.box-body-->
+                        </div>
+                     
+                    </div>
+                    <div class="col-md-6">
+                        <div class="box box-default">
+                            <div class="box-header with-border">
+                                <i class="fa fa-bar-chart-o"></i>
+                                <h3 class="box-title">ทีม</h3>
+
+                            </div>
+                            <div class="box-body">
+                                <div id="chartContainerTeam" style="height: 300px; width: 100%;">
+                                </div>
+                            </div>
+                            <div class="box-footer text-right">
+                                <a class="btn btn-primary"><i class="fa fa-file"></i> Detail</a>
+                            </div>
+                            <!-- /.box-body-->
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="box box-default">
+                            <div class="box-header with-border">
+                                <i class="fa fa-bar-chart-o"></i>
+                                <h3 class="box-title">ยอดขายโฆษณาของหนังสือ</h3>
+                            </div>
+                            <div class="box-body">
+                                <div id="chartContainerBook" style="height: 300px; width: 100%;">
+                                </div>
+                            </div>
+                            <div class="box-footer text-right">
+                                <a class="btn btn-primary"><i class="fa fa-file"></i> Detail</a>
+                            </div>
+                            <!-- /.box-body-->
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+           
+        <!-- /.col -->
+    </div>
+    <!-- /.row -->
+</section>
+<script src="~/lib/jquery/dist/jquery-3.2.1.min.js"></script>
+<script type="text/javascript" src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+<script type="text/javascript">
+  window.onload = function () {
+    var chart = new CanvasJS.Chart("chartContainer2",
+    {
+
+      title:{
+    //  text: "Earthquakes - per month"
+      },
+      axisX: {
+        valueFormatString: "MMM",
+        interval:1,
+        intervalType: "month"
+      },
+      axisY:{
+        includeZero: false
+
+      },
+      data: [
+      {
+        type: "line",
+
+        dataPoints: [
+        { x: new Date(2012, 00, 1), y: 450 },
+        { x: new Date(2012, 01, 1), y: 414},
+          { x: new Date(2012, 02, 1), y: 520, indexLabel: "highest",markerColor: "red", markerType: "triangle"},
+        { x: new Date(2012, 03, 1), y: 460 },
+        { x: new Date(2012, 04, 1), y: 450 },
+        { x: new Date(2012, 05, 1), y: 500 },
+        { x: new Date(2012, 06, 1), y: 480 },
+        { x: new Date(2012, 07, 1), y: 480 },
+        { x: new Date(2012, 08, 1), y: 410 , indexLabel: "lowest",markerColor: "DarkSlateGrey", markerType: "cross"},
+        { x: new Date(2012, 09, 1), y: 500 },
+        { x: new Date(2012, 10, 1), y: 480 },
+        { x: new Date(2012, 11, 1), y: 510 }
+        ]
+      }
+      ]
+    });
+
+    chart.render();
+      //
+    var chart = new CanvasJS.Chart("chartContainerTeam",
+ {
+     title: {
+         //text: "Top Oil Reserves"
+     },
+     data: [
+
+     {
+         dataPoints: [
+         { x: 1, y: 297571, label: "Print" },
+         { x: 2, y: 267017, label: "New Media" },
+         { x: 3, y: 175200, label: "สัมนา" },
+         { x: 4, y: 154580, label: "กิจกรรม" },
+         { x: 5, y: 116000, label: "อีเว้นท์/โครงการ" },
+         { x: 6, y: 97800, label: "อื่นๆ" }
+         ]
+     }
+     ]
+ });
+
+    chart.render();
+
+      //
+    var chart = new CanvasJS.Chart("chartContainerBook",
+ {
+     title: {
+        // text: "Top Oil Reserves"
+     },
+     data: [
+
+     {
+         dataPoints: [
+         { x: 1, y: 297571, label: "มติชนรายวัน" },
+         { x: 2, y: 267017, label: "ข่าวสด" },
+         { x: 3, y: 175200, label: "ประชาชาติธุรกิจ" },
+         { x: 4, y: 154580, label: "มติชนสุดสัปดาห์" },
+         { x: 5, y: 116000, label: "เทคโนโลยีชาวบ้าน" },
+         { x: 6, y: 97800, label: "เส้นทางเศรษฐี" },
+         { x: 7, y: 20682, label: "ศิลปวัฒนธรรม" },
+         { x: 8, y: 116000, label: "ทีวี" },
+         { x: 9, y: 97800, label: "เว็บไซต์" },
+         { x: 10, y: 20682, label: "อีเว้นท์" },
+         { x: 11, y: 20350, label: "กิจกรรม" }
+         ]
+     }
+     ]
+ });
+
+    chart.render();
+  }
+</script>
+<script>
+    $(document).on('click', '.checkAll', function () {
+
+        var check = $('.checkAll').prop('checked');
+        alert(check);
+
+        if (check == false) {
+
+            $('.icheckbox_flat-green .checked').attr('class', 'icheckbox_flat-green');
+        } else {
+
+            $('.icheckbox_flat-green .checked').attr('class', 'icheckbox_flat-green checked');
+        }
+    })
+</script>
+
+

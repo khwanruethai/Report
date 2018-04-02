@@ -1,0 +1,162 @@
+﻿@{
+    Layout = "_Layout";
+}
+<section class="content-header">
+    <h1>
+        ดูรายงานฝ่ายโฆษณาย้อนหลัง<br />
+        <small>search</small>
+    </h1>
+    <ol class="breadcrumb">
+        <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
+        <li class="active">Advertising</li>
+    </ol>
+</section>
+<section class="content">
+    <div class="box box-primary">
+        <div class="box-header">
+            <h3 class="box-title">เรียกดูรายงาน</h3>
+        </div>
+        <div class="box-body">
+            <!-- Date range -->
+            <div class="form-group">
+                <label>ตั่งแต่วันที่ - ถึงวันที่:</label>
+
+                <div class="input-group">
+                    <div class="input-group-addon">
+                        <i class="fa fa-calendar"></i>
+                    </div>
+                    <input type="text" class="form-control pull-right" id="reservation">
+                </div>
+            </div>
+            <hr />
+            <div class="col-md-6 col-sm-6">
+                <div class="form-group">
+                    <h5>การแสดงประเภทโฆษณา</h5>
+                </div>
+                <div class="form-group">
+                    <label>
+                        <div class="icheckbox_flat-green" aria-checked="false" aria-disabled="false" style="position: relative;" >
+                            <input type="checkbox" class="flat-red checkAll" style="position: absolute; opacity: 0;" checked="checked">
+                            <ins class="iCheck-helper" style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins>
+                        </div>
+                        แสดงทั้งหมด
+                    </label>
+                </div>
+                <div class="form-group">
+                    <label>
+                        <div class="icheckbox_flat-green" aria-checked="false" aria-disabled="false" style="position: relative;">
+                            <input type="checkbox" class="flat-red" style="position: absolute; opacity: 0;" checked="checked">
+                            <ins class="iCheck-helper" style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins>
+                        </div>
+                        มติชนรายวัน
+                    </label>
+                </div>
+                <div class="form-group">
+                    <label>
+                        <div class="icheckbox_flat-green" aria-checked="false" aria-disabled="false" style="position: relative;">
+                            <input type="checkbox" class="flat-red" style="position: absolute; opacity: 0;" checked="checked">
+                            <ins class="iCheck-helper" style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins>
+                        </div>
+                        ข่าวสด
+                    </label>
+                </div>
+                <div class="form-group">
+                    <label>
+                        <div class="icheckbox_flat-green" aria-checked="false" aria-disabled="false" style="position: relative;">
+                            <input type="checkbox" class="flat-red" style="position: absolute; opacity: 0;" checked="checked">
+                            <ins class="iCheck-helper" style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins>
+                        </div>
+                        ประชาติธุรกิจ
+                    </label>
+                </div>
+                <div class="form-group">
+                    <label>
+                        <div class="icheckbox_flat-green" aria-checked="false" aria-disabled="false" style="position: relative;">
+                            <input type="checkbox" class="flat-red" style="position: absolute; opacity: 0;" checked="checked">
+                            <ins class="iCheck-helper" style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins>
+                        </div>
+                        มติชนสุดสัปดาห์
+                    </label>
+                </div>
+                <div class="form-group">
+                    <label>
+                        <div class="icheckbox_flat-green" aria-checked="false" aria-disabled="false" style="position: relative;">
+                            <input type="checkbox" class="flat-red" style="position: absolute; opacity: 0;" checked="checked">
+                            <ins class="iCheck-helper" style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins>
+                        </div>
+                        เทคโนโลยี
+                    </label>
+                </div>
+                <div class="form-group">
+                    <label>
+                        <div class="icheckbox_flat-green" aria-checked="false" aria-disabled="false" style="position: relative;">
+                            <input type="checkbox" class="flat-red" style="position: absolute; opacity: 0;" checked="checked">
+                            <ins class="iCheck-helper" style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins>
+                        </div>
+                        เส้นทางเศรษฐี
+                    </label>
+                </div>
+                <div class="form-group">
+                    <label>
+                        <div class="icheckbox_flat-green" aria-checked="false" aria-disabled="false" style="position: relative;">
+                            <input type="checkbox" class="flat-red" style="position: absolute; opacity: 0;" checked="checked">
+                            <ins class="iCheck-helper" style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins>
+                        </div>
+                        ศิลปวัฒนธรรม
+                    </label>
+                </div>
+                <div class="form-group">
+                    <label>
+                        <div class="icheckbox_flat-green" aria-checked="false" aria-disabled="false" style="position: relative;">
+                            <input type="checkbox" class="flat-red" style="position: absolute; opacity: 0;" checked="checked">
+                            <ins class="iCheck-helper" style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins>
+                        </div>
+                        ทีวี
+                    </label>
+                </div>
+                <div class="form-group">
+                    <label>
+                        <div class="icheckbox_flat-green" aria-checked="false" aria-disabled="false" style="position: relative;">
+                            <input type="checkbox" class="flat-red" style="position: absolute; opacity: 0;" checked="checked">
+                            <ins class="iCheck-helper" style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins>
+                        </div>
+                        เว็บไซต์
+                    </label>
+                </div>
+                <div class="form-group">
+                    <label>
+                        <div class="icheckbox_flat-green" aria-checked="false" aria-disabled="false" style="position: relative;">
+                            <input type="checkbox" class="flat-red" style="position: absolute; opacity: 0;" checked="checked">
+                            <ins class="iCheck-helper" style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins>
+                        </div>
+                        อีเว้นท์
+                    </label>
+                </div>
+                <div class="form-group">
+                    <label>
+                        <div class="icheckbox_flat-green" aria-checked="false" aria-disabled="false" style="position: relative;">
+                            <input type="checkbox" class="flat-red" style="position: absolute; opacity: 0;" checked="checked">
+                            <ins class="iCheck-helper" style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins>
+                        </div>
+                        กิจกรรม
+                    </label>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<script>
+    $(document).on('click', '.checkAll', function () {
+
+        var check = $('.checkAll').prop('checked');
+        alert(check);
+
+        if (check == false) {
+
+            $('.icheckbox_flat-green .checked').attr('class', 'icheckbox_flat-green');
+        } else {
+
+            $('.icheckbox_flat-green .checked').attr('class', 'icheckbox_flat-green checked');
+        }
+    })
+</script>
